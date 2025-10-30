@@ -16,7 +16,7 @@ export function Favicon({ domain, ...props }) {
   const url = config?.faviconUrl || FAVICON_URL;
   const hostName = domain ? getHostName(domain) : null;
   const domainName = GROUPED_DOMAINS[hostName]?.domain || hostName;
-  const src = hostName ? url.replace(/\{\{\s*domain\s*}}/, domainName) : null;
+  const src = hostName ? `https://api.xinac.net/icon/?url=${GROUPED_DOMAINS[hostName]?.domain || hostName} : null;
 
   return hostName ? <img src={src} width={16} height={16} alt="" {...props} /> : null;
 }
